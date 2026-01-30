@@ -1,44 +1,47 @@
-# Shades of Purple Color Palette
+# Color Palette
 
-Based on the [Shades of Purple VS Code theme](https://github.com/ahmadawais/shades-of-purple-vscode).
+Based on the darker, more muted theme from the screenshot.
 
 ## Backgrounds
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Panel | `#1E1E3F` | Main page background, input fields |
-| Editor | `#2D2B55` | Cards, elevated surfaces |
-| Activity Bar | `#28284E` | Alternative surface |
-| Sidebar | `#222244` | Secondary panels |
+| Base | `#171421` | Main page background, input fields |
+| Surface | `#1E1A2E` | Cards, elevated surfaces |
+| Elevated | `#252133` | Interactive elements, hover states |
+| Overlay | `#2D2640` | Hover states, overlays |
 
 ## Borders
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Muted | `#3B3B6E` | Card borders, input borders |
+| Subtle | `#3D3554` | Card borders, dividers |
+| Muted | `#4A4166` | Input borders, focus states |
 
 ## Text
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Primary | `#A599E9` | Headings, titles, labels |
-| Input | `#FAD000` | Input field values |
-| Muted | `#6E6E9E` | Placeholders, disabled text |
+| Primary | `#E8E2F4` | Headings, titles |
+| Secondary | `#A9A1C1` | Labels, body text |
+| Muted | `#6B6483` | Placeholders, disabled text |
+| Input | `#E5C07B` | Input field values |
 
 ## Accents
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Yellow | `#FAD000` | Slider accent, input text |
-| Purple | `#B362FF` | Focus rings, highlights, selections |
-| Pink | `#FF2C70` | Errors, warnings |
-| Cyan | `#9EFFFF` | Links, hover states |
-| Green | `#3AD900` | Success states |
+| Gold | `#E5C07B` | Slider accent, input text |
+| Purple | `#C792EA` | Focus rings, highlights |
+| Pink | `#F07178` | Errors, chart line 1 |
+| Cyan | `#89DDFF` | Links, hover states |
+| Green | `#C3E88D` | Success states, chart line 2 |
+| Orange | `#F78C6C` | Warnings, chart line 3 |
 
 ## Status
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Error | `#EC3A37` | Error messages |
-| Success | `#3AD900` | Success messages |
-| Warning | `#FAD000` | Warning messages |
+| Error | `#F07178` | Error messages |
+| Success | `#C3E88D` | Success messages |
+| Warning | `#E5C07B` | Warning messages |
