@@ -1,7 +1,12 @@
-import Home from './pages/Home'
+import { CashflowProvider } from "./context/CashflowContext";
+import Home from "./pages/Home";
 
 const App = () => {
-  return <Home />
-}
+  return (
+    <CashflowProvider>
+      <Home />
+    </CashflowProvider>
+  );
+};
 
-export default App
+export default App;

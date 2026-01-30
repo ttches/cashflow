@@ -1,128 +1,17 @@
-import { useState, useMemo } from "react";
 import InputSection from "../components/InputSection";
 import UltraMinimalChart from "../components/UltraMinimalChart";
-import { calculateLoanSchedule } from "../utils/loan";
-import { calculateInvestmentSchedule } from "../utils/investment";
-
-const loanFields = [
-  { label: "Loan Amount", name: "loanAmount", placeholder: "50000" },
-  {
-    label: "Interest Rate",
-    name: "loanInterest",
-    placeholder: "6.5",
-    suffix: "%",
-  },
-  { label: "Monthly Payment", name: "loanPayment", placeholder: "500" },
-];
-
-const investmentFields = [
-  { label: "Initial Investment", name: "initialAmount", placeholder: "1000" },
-  { label: "Return Rate", name: "returnRate", placeholder: "7", suffix: "%" },
-  {
-    label: "Monthly Contribution",
-    name: "monthlyContribution",
-    placeholder: "300",
-  },
-];
+import { useLoan } from "../hooks/useLoan";
+import { useInvestment } from "../hooks/useInvestment";
+import { useAdditionalFunds } from "../hooks/useAdditionalFunds";
+import { useTimeHorizon } from "../hooks/useTimeHorizon";
+import { useChartData } from "../hooks/useChartData";
 
 const Home = () => {
-  const [loanValues, setLoanValues] = useState<Record<string, string>>({});
-  const [investmentValues, setInvestmentValues] = useState<
-    Record<string, string>
-  >({});
-  const [additionalValues, setAdditionalValues] = useState<Record<string, string>>({});
-  const [additionalEnabled, setAdditionalEnabled] = useState(true);
-  const [splitPercent, setSplitPercent] = useState(50);
-  const [timeHorizon, setTimeHorizon] = useState(10);
-
-  const handleLoanChange = (name: string, value: string) => {
-    setLoanValues((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleInvestmentChange = (name: string, value: string) => {
-    setInvestmentValues((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleAdditionalChange = (name: string, value: string) => {
-    setAdditionalValues((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const loanAmount = Number(loanValues.loanAmount) || 50000;
-  const loanInterest = (Number(loanValues.loanInterest) || 6.5) / 100;
-  const loanPayment = Number(loanValues.loanPayment) || 500;
-
-  const initialAmount = Number(investmentValues.initialAmount) || 1000;
-  const returnRate = (Number(investmentValues.returnRate) || 7) / 100;
-  const monthlyContribution =
-    Number(investmentValues.monthlyContribution) || 300;
-
-  const additionalAmount = additionalEnabled ? (Number(additionalValues.amount) || 0) : 0;
-  const extraToLoan = additionalAmount * (1 - splitPercent / 100);
-  const extraToInvest = additionalAmount * (splitPercent / 100);
-
-  const chartData = useMemo(() => {
-    const loanData = calculateLoanSchedule(
-      loanAmount,
-      loanInterest,
-      loanPayment,
-      timeHorizon,
-      extraToLoan,
-    );
-    const investmentData = calculateInvestmentSchedule(
-      initialAmount,
-      returnRate,
-      monthlyContribution,
-      timeHorizon,
-      extraToInvest,
-    );
-
-    const loanBalanceData = [
-      {
-        id: "Loan Balance",
-        data: loanData.map((d) => ({ x: d.year, y: d.balance })),
-      },
-      {
-        id: "Interest Paid",
-        data: loanData.map((d) => ({ x: d.year, y: d.totalInterestPaid })),
-      },
-    ];
-
-    const investmentGrowthData = [
-      {
-        id: "Investment Value",
-        data: investmentData.map((d) => ({ x: d.year, y: d.totalValue })),
-      },
-      {
-        id: "Contributions",
-        data: investmentData.map((d) => ({
-          x: d.year,
-          y: d.totalContributions,
-        })),
-      },
-    ];
-
-    const netWorthData = [
-      {
-        id: "Net Worth",
-        data: loanData.map((d, i) => ({
-          x: d.year,
-          y: investmentData[i].totalValue - d.balance,
-        })),
-      },
-    ];
-
-    return { loanBalanceData, investmentGrowthData, netWorthData };
-  }, [
-    loanAmount,
-    loanInterest,
-    loanPayment,
-    initialAmount,
-    returnRate,
-    monthlyContribution,
-    timeHorizon,
-    extraToLoan,
-    extraToInvest,
-  ]);
+  const loan = useLoan();
+  const investment = useInvestment();
+  const additional = useAdditionalFunds();
+  const timeHorizon = useTimeHorizon();
+  const chartData = useChartData();
 
   return (
     <div className="h-screen bg-[#171421] overflow-hidden">
@@ -130,35 +19,48 @@ const Home = () => {
         <div className="h-full grid grid-cols-[1fr_3fr] gap-8">
           <div className="space-y-6 overflow-y-auto">
             <InputSection
-              fields={loanFields}
-              values={loanValues}
-              onChange={handleLoanChange}
-              rightContent={extraToLoan > 0 ? { loanPayment: `+ $${Math.round(extraToLoan)}` } : undefined}
+              fields={loan.fields}
+              values={loan.values}
+              onChange={loan.onChange}
+              rightContent={
+                additional.extraToLoan > 0
+                  ? { loanPayment: `+ $${Math.round(additional.extraToLoan)}` }
+                  : undefined
+              }
             />
             <InputSection
-              fields={investmentFields}
-              values={investmentValues}
-              onChange={handleInvestmentChange}
-              rightContent={extraToInvest > 0 ? { monthlyContribution: `+ $${Math.round(extraToInvest)}` } : undefined}
+              fields={investment.fields}
+              values={investment.values}
+              onChange={investment.onChange}
+              rightContent={
+                additional.extraToInvest > 0
+                  ? {
+                      monthlyContribution: `+ $${Math.round(additional.extraToInvest)}`,
+                    }
+                  : undefined
+              }
             />
             <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6 space-y-4">
               <div>
-                <label htmlFor="additionalPayments" className="block text-sm font-medium text-[#A9A1C1] mb-1">
+                <label
+                  htmlFor="additionalPayments"
+                  className="block text-sm font-medium text-[#A9A1C1] mb-1"
+                >
                   Additional Payments
                 </label>
                 <div className="relative">
                   <input
                     type="text"
                     id="additionalPayments"
-                    value={additionalValues.amount || ''}
-                    onChange={(e) => handleAdditionalChange('amount', e.target.value)}
-                    placeholder="300"
+                    value={additional.amount}
+                    onChange={(e) => additional.setAmount(e.target.value)}
+                    placeholder={additional.placeholder}
                     className="w-full px-3 py-2 bg-[#171421] border border-[#3D3554] rounded-lg text-[#E5C07B] placeholder-[#6B6483] focus:ring-2 focus:ring-[#C792EA] focus:border-[#C792EA] outline-none transition-colors"
                   />
                   <input
                     type="checkbox"
-                    checked={additionalEnabled}
-                    onChange={(e) => setAdditionalEnabled(e.target.checked)}
+                    checked={additional.enabled}
+                    onChange={(e) => additional.setEnabled(e.target.checked)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 accent-[#C792EA] cursor-pointer"
                   />
                 </div>
@@ -167,21 +69,23 @@ const Home = () => {
                 type="range"
                 min="0"
                 max="100"
-                value={splitPercent}
-                onChange={(e) => setSplitPercent(Number(e.target.value))}
+                value={additional.splitPercent}
+                onChange={(e) =>
+                  additional.setSplitPercent(Number(e.target.value))
+                }
                 className="w-full accent-[#E5C07B]"
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-[#A9A1C1] mb-2">
-                Time Horizon: {timeHorizon} years
+                Time Horizon: {timeHorizon.years} years
               </label>
               <input
                 type="range"
                 min="1"
                 max="30"
-                value={timeHorizon}
-                onChange={(e) => setTimeHorizon(Number(e.target.value))}
+                value={timeHorizon.years}
+                onChange={(e) => timeHorizon.setYears(Number(e.target.value))}
                 className="w-full accent-[#E5C07B]"
               />
             </div>
