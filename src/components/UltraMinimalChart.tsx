@@ -24,7 +24,7 @@ const UltraMinimalChart = ({
   return (
     <div className="h-full flex">
       <div className="flex items-center justify-center w-8">
-        <h3 className="text-lg font-semibold text-[#A9A1C1] -rotate-90 whitespace-nowrap">
+        <h3 className="text-lg font-semibold text-[#a196e4] -rotate-90 whitespace-nowrap">
           {title}
         </h3>
       </div>
@@ -44,18 +44,18 @@ const UltraMinimalChart = ({
           enableGridX={false}
           enableGridY={false}
           theme={{
-            background: "#1E1A2E",
-            text: { fill: "#A9A1C1" },
+            background: "#191831",
+            text: { fill: "#a196e4" },
             axis: {
               ticks: { text: { fill: "#6B6483" } },
-              legend: { text: { fill: "#A9A1C1" } },
+              legend: { text: { fill: "#a196e4" } },
               domain: { line: { stroke: "#3D3554" } },
             },
             crosshair: { line: { stroke: "#C792EA" } },
             tooltip: {
               container: {
-                background: "#171421",
-                color: "#A9A1C1",
+                background: "#15152a",
+                color: "#a196e4",
                 borderRadius: "8px",
               },
             },

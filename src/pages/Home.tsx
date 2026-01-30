@@ -14,7 +14,7 @@ const Home = () => {
   const chartData = useChartData();
 
   return (
-    <div className="h-screen bg-[#171421] overflow-hidden">
+    <div className="h-screen bg-[#15152a] overflow-hidden">
       <div className="h-full max-w-7xl mx-auto px-4 py-8">
         <div className="h-full grid grid-cols-[1fr_3fr] gap-8">
           <div className="space-y-6 overflow-y-auto">
@@ -40,11 +40,11 @@ const Home = () => {
                   : undefined
               }
             />
-            <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6 space-y-4">
+            <div className="bg-[#191831] rounded-xl border border-[#3D3554] p-6 space-y-4">
               <div>
                 <label
                   htmlFor="additionalPayments"
-                  className="block text-sm font-medium text-[#A9A1C1] mb-1"
+                  className="block text-sm font-medium text-[#a196e4] mb-1"
                 >
                   Additional Payments
                 </label>
@@ -55,7 +55,7 @@ const Home = () => {
                     value={additional.amount}
                     onChange={(e) => additional.setAmount(e.target.value)}
                     placeholder={additional.placeholder}
-                    className="w-full px-3 py-2 bg-[#171421] border border-[#3D3554] rounded-lg text-[#fad003] placeholder-[#6B6483] focus:ring-2 focus:ring-[#C792EA] focus:border-[#C792EA] outline-none transition-colors"
+                    className="w-full px-3 py-2 bg-[#15152a] border border-[#3D3554] rounded-lg text-[#fad003] placeholder-[#6B6483] focus:ring-2 focus:ring-[#C792EA] focus:border-[#C792EA] outline-none transition-colors"
                   />
                   <input
                     type="checkbox"
@@ -77,7 +77,7 @@ const Home = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#A9A1C1] mb-2">
+              <label className="block text-sm font-medium text-[#a196e4] mb-2">
                 Time Horizon: {timeHorizon.years} years
               </label>
               <input

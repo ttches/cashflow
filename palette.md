@@ -6,8 +6,8 @@ Based on the darker, more muted theme from the screenshot.
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Base | `#171421` | Main page background, input fields |
-| Surface | `#1E1A2E` | Cards, elevated surfaces |
+| Base | `#15152a` | Main page background, input fields |
+| Surface | `#191831` | Cards, elevated surfaces |
 | Elevated | `#252133` | Interactive elements, hover states |
 | Overlay | `#2D2640` | Hover states, overlays |
 
@@ -23,7 +23,7 @@ Based on the darker, more muted theme from the screenshot.
 | Name | Hex | Usage |
 |------|-----|-------|
 | Primary | `#E8E2F4` | Headings, titles |
-| Secondary | `#A9A1C1` | Labels, body text |
+| Secondary | `#a196e4` | Labels, body text |
 | Muted | `#6B6483` | Placeholders, disabled text |
 | Input | `#fad003` | Input field values |
 
