@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph17 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">17 - Sparkline Style</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">Minimal axes, focus on the data</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">17 - Sparkline Style</h3>
+      <p className="text-sm text-[#6B6483] mb-2">Minimal axes, focus on the data</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -22,15 +22,15 @@ const Graph17 = () => {
           enableGridX={false}
           enableGridY={false}
           theme={{
-            background: '#2D2B55',
-            text: { fill: '#A599E9' },
+            background: '#1E1A2E',
+            text: { fill: '#A9A1C1' },
             axis: {
-              ticks: { text: { fill: '#6E6E9E', fontSize: 10 } },
+              ticks: { text: { fill: '#6B6483', fontSize: 10 } },
             },
-            crosshair: { line: { stroke: '#B362FF' } },
-            tooltip: { container: { background: '#1E1E3F', color: '#A599E9', fontSize: 12 } },
+            crosshair: { line: { stroke: '#C792EA' } },
+            tooltip: { container: { background: '#171421', color: '#A9A1C1', fontSize: 12 } },
           }}
-          colors={['#B362FF', '#9EFFFF']}
+          colors={['#C792EA', '#89DDFF']}
           legends={[
             {
               anchor: 'bottom-right',
@@ -38,7 +38,7 @@ const Graph17 = () => {
               translateX: 100,
               itemWidth: 80,
               itemHeight: 16,
-              itemTextColor: '#A599E9',
+              itemTextColor: '#A9A1C1',
               symbolSize: 8,
               symbolShape: 'circle',
             },

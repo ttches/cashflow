@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph12 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">12 - Warm Tones</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">Orange and pink palette, rounded curves</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">12 - Warm Tones</h3>
+      <p className="text-sm text-[#6B6483] mb-2">Orange and pink palette, rounded curves</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -16,24 +16,24 @@ const Graph12 = () => {
           enableArea={true}
           areaOpacity={0.2}
           pointSize={8}
-          pointColor="#2D2B55"
+          pointColor="#1E1A2E"
           pointBorderWidth={2}
           pointBorderColor={{ from: 'serieColor' }}
           lineWidth={2}
           useMesh={true}
           enableSlices="x"
           theme={{
-            background: '#2D2B55',
-            text: { fill: '#A599E9' },
-            grid: { line: { stroke: '#3B3B6E', strokeOpacity: 0.5 } },
+            background: '#1E1A2E',
+            text: { fill: '#A9A1C1' },
+            grid: { line: { stroke: '#3D3554', strokeOpacity: 0.5 } },
             axis: {
-              ticks: { text: { fill: '#A599E9' } },
-              legend: { text: { fill: '#A599E9' } },
+              ticks: { text: { fill: '#A9A1C1' } },
+              legend: { text: { fill: '#A9A1C1' } },
             },
-            crosshair: { line: { stroke: '#FF2C70' } },
-            tooltip: { container: { background: '#1E1E3F', color: '#A599E9' } },
+            crosshair: { line: { stroke: '#F07178' } },
+            tooltip: { container: { background: '#171421', color: '#A9A1C1' } },
           }}
-          colors={['#FF2C70', '#FAD000']}
+          colors={['#F07178', '#E5C07B']}
           legends={[
             {
               anchor: 'bottom-right',
@@ -41,7 +41,7 @@ const Graph12 = () => {
               translateX: 100,
               itemWidth: 80,
               itemHeight: 20,
-              itemTextColor: '#A599E9',
+              itemTextColor: '#A9A1C1',
               symbolSize: 12,
               symbolShape: 'circle',
             },

@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph10 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">10 - Gradient Area</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">High opacity area fill, smooth curves</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">10 - Gradient Area</h3>
+      <p className="text-sm text-[#6B6483] mb-2">High opacity area fill, smooth curves</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -22,17 +22,17 @@ const Graph10 = () => {
           enableSlices="x"
           enableGridX={false}
           theme={{
-            background: '#1E1E3F',
-            text: { fill: '#A599E9' },
-            grid: { line: { stroke: '#3B3B6E', strokeOpacity: 0.3 } },
+            background: '#171421',
+            text: { fill: '#A9A1C1' },
+            grid: { line: { stroke: '#3D3554', strokeOpacity: 0.3 } },
             axis: {
-              ticks: { text: { fill: '#A599E9' } },
-              legend: { text: { fill: '#A599E9' } },
+              ticks: { text: { fill: '#A9A1C1' } },
+              legend: { text: { fill: '#A9A1C1' } },
             },
-            crosshair: { line: { stroke: '#FAD000' } },
-            tooltip: { container: { background: '#2D2B55', color: '#FAD000' } },
+            crosshair: { line: { stroke: '#E5C07B' } },
+            tooltip: { container: { background: '#1E1A2E', color: '#E5C07B' } },
           }}
-          colors={['#B362FF', '#FAD000']}
+          colors={['#C792EA', '#E5C07B']}
           legends={[
             {
               anchor: 'top-left',
@@ -40,7 +40,7 @@ const Graph10 = () => {
               translateY: -10,
               itemWidth: 100,
               itemHeight: 20,
-              itemTextColor: '#A599E9',
+              itemTextColor: '#A9A1C1',
               symbolSize: 12,
               symbolShape: 'circle',
             },

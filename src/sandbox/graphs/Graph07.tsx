@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph07 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">07 - Points Emphasis</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">Large points, thin connecting lines</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">07 - Points Emphasis</h3>
+      <p className="text-sm text-[#6B6483] mb-2">Large points, thin connecting lines</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -17,24 +17,24 @@ const Graph07 = () => {
           pointSize={12}
           pointColor={{ from: 'color' }}
           pointBorderWidth={2}
-          pointBorderColor="#2D2B55"
+          pointBorderColor="#1E1A2E"
           lineWidth={1}
           useMesh={true}
           enableSlices="x"
           enableGridX={true}
           enableGridY={false}
           theme={{
-            background: '#2D2B55',
-            text: { fill: '#A599E9' },
-            grid: { line: { stroke: '#3B3B6E', strokeDasharray: '4 4' } },
+            background: '#1E1A2E',
+            text: { fill: '#A9A1C1' },
+            grid: { line: { stroke: '#3D3554', strokeDasharray: '4 4' } },
             axis: {
-              ticks: { text: { fill: '#A599E9' } },
-              legend: { text: { fill: '#A599E9' } },
+              ticks: { text: { fill: '#A9A1C1' } },
+              legend: { text: { fill: '#A9A1C1' } },
             },
-            crosshair: { line: { stroke: '#B362FF' } },
-            tooltip: { container: { background: '#1E1E3F', color: '#A599E9' } },
+            crosshair: { line: { stroke: '#C792EA' } },
+            tooltip: { container: { background: '#171421', color: '#A9A1C1' } },
           }}
-          colors={['#FAD000', '#3AD900']}
+          colors={['#E5C07B', '#C3E88D']}
           legends={[
             {
               anchor: 'bottom-right',
@@ -42,7 +42,7 @@ const Graph07 = () => {
               translateX: 100,
               itemWidth: 80,
               itemHeight: 20,
-              itemTextColor: '#A599E9',
+              itemTextColor: '#A9A1C1',
               symbolSize: 12,
               symbolShape: 'circle',
             },

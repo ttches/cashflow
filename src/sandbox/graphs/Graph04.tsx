@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph04 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">04 - Bold Lines</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">Thick strokes, large points with borders</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">04 - Bold Lines</h3>
+      <p className="text-sm text-[#6B6483] mb-2">Thick strokes, large points with borders</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -15,7 +15,7 @@ const Graph04 = () => {
           curve="linear"
           enableArea={false}
           pointSize={10}
-          pointColor="#2D2B55"
+          pointColor="#1E1A2E"
           pointBorderWidth={3}
           pointBorderColor={{ from: 'serieColor' }}
           lineWidth={4}
@@ -23,17 +23,17 @@ const Graph04 = () => {
           enableSlices="x"
           enableGridY={false}
           theme={{
-            background: '#2D2B55',
-            text: { fill: '#A599E9' },
-            grid: { line: { stroke: '#3B3B6E' } },
+            background: '#1E1A2E',
+            text: { fill: '#A9A1C1' },
+            grid: { line: { stroke: '#3D3554' } },
             axis: {
-              ticks: { text: { fill: '#A599E9' } },
-              legend: { text: { fill: '#A599E9' } },
+              ticks: { text: { fill: '#A9A1C1' } },
+              legend: { text: { fill: '#A9A1C1' } },
             },
-            crosshair: { line: { stroke: '#FAD000', strokeWidth: 2 } },
-            tooltip: { container: { background: '#1E1E3F', color: '#A599E9' } },
+            crosshair: { line: { stroke: '#E5C07B', strokeWidth: 2 } },
+            tooltip: { container: { background: '#171421', color: '#A9A1C1' } },
           }}
-          colors={['#FAD000', '#9EFFFF']}
+          colors={['#E5C07B', '#89DDFF']}
           legends={[
             {
               anchor: 'bottom-right',
@@ -41,7 +41,7 @@ const Graph04 = () => {
               translateX: 100,
               itemWidth: 80,
               itemHeight: 20,
-              itemTextColor: '#A599E9',
+              itemTextColor: '#A9A1C1',
               symbolSize: 12,
               symbolShape: 'circle',
             },

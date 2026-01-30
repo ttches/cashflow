@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph14 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">14 - Dense Grid</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">Full grid lines, traditional chart look</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">14 - Dense Grid</h3>
+      <p className="text-sm text-[#6B6483] mb-2">Full grid lines, traditional chart look</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -15,7 +15,7 @@ const Graph14 = () => {
           curve="linear"
           enableArea={false}
           pointSize={6}
-          pointColor="#2D2B55"
+          pointColor="#1E1A2E"
           pointBorderWidth={2}
           pointBorderColor={{ from: 'serieColor' }}
           lineWidth={2}
@@ -23,18 +23,18 @@ const Graph14 = () => {
           enableSlices="x"
           gridYValues={5}
           theme={{
-            background: '#2D2B55',
-            text: { fill: '#A599E9' },
-            grid: { line: { stroke: '#3B3B6E', strokeWidth: 1 } },
+            background: '#1E1A2E',
+            text: { fill: '#A9A1C1' },
+            grid: { line: { stroke: '#3D3554', strokeWidth: 1 } },
             axis: {
-              ticks: { text: { fill: '#A599E9' }, line: { stroke: '#3B3B6E' } },
-              legend: { text: { fill: '#A599E9' } },
-              domain: { line: { stroke: '#A599E9' } },
+              ticks: { text: { fill: '#A9A1C1' }, line: { stroke: '#3D3554' } },
+              legend: { text: { fill: '#A9A1C1' } },
+              domain: { line: { stroke: '#A9A1C1' } },
             },
-            crosshair: { line: { stroke: '#B362FF' } },
-            tooltip: { container: { background: '#1E1E3F', color: '#A599E9' } },
+            crosshair: { line: { stroke: '#C792EA' } },
+            tooltip: { container: { background: '#171421', color: '#A9A1C1' } },
           }}
-          colors={['#FF2C70', '#3AD900']}
+          colors={['#F07178', '#C3E88D']}
           legends={[
             {
               anchor: 'bottom-right',
@@ -42,7 +42,7 @@ const Graph14 = () => {
               translateX: 100,
               itemWidth: 80,
               itemHeight: 20,
-              itemTextColor: '#A599E9',
+              itemTextColor: '#A9A1C1',
               symbolSize: 12,
               symbolShape: 'square',
             },

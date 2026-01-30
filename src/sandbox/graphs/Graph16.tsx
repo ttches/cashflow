@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph16 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">16 - High Contrast</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">Strong color contrast, prominent lines</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">16 - High Contrast</h3>
+      <p className="text-sm text-[#6B6483] mb-2">Strong color contrast, prominent lines</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -15,7 +15,7 @@ const Graph16 = () => {
           curve="catmullRom"
           enableArea={false}
           pointSize={10}
-          pointColor="#1E1E3F"
+          pointColor="#171421"
           pointBorderWidth={3}
           pointBorderColor={{ from: 'serieColor' }}
           lineWidth={4}
@@ -24,17 +24,17 @@ const Graph16 = () => {
           enableGridX={false}
           enableGridY={false}
           theme={{
-            background: '#1E1E3F',
-            text: { fill: '#A599E9' },
+            background: '#171421',
+            text: { fill: '#A9A1C1' },
             axis: {
-              ticks: { text: { fill: '#A599E9' } },
-              legend: { text: { fill: '#A599E9' } },
-              domain: { line: { stroke: '#3B3B6E', strokeWidth: 2 } },
+              ticks: { text: { fill: '#A9A1C1' } },
+              legend: { text: { fill: '#A9A1C1' } },
+              domain: { line: { stroke: '#3D3554', strokeWidth: 2 } },
             },
-            crosshair: { line: { stroke: '#FAD000', strokeWidth: 2 } },
-            tooltip: { container: { background: '#2D2B55', color: '#FAD000' } },
+            crosshair: { line: { stroke: '#E5C07B', strokeWidth: 2 } },
+            tooltip: { container: { background: '#1E1A2E', color: '#E5C07B' } },
           }}
-          colors={['#FAD000', '#3AD900']}
+          colors={['#E5C07B', '#C3E88D']}
           legends={[
             {
               anchor: 'bottom-right',
@@ -42,7 +42,7 @@ const Graph16 = () => {
               translateX: 100,
               itemWidth: 80,
               itemHeight: 20,
-              itemTextColor: '#FAD000',
+              itemTextColor: '#E5C07B',
               symbolSize: 14,
               symbolShape: 'circle',
             },

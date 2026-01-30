@@ -23,74 +23,74 @@ import {
 
 const Sandbox = () => {
   return (
-    <div className="min-h-screen bg-[#1E1E3F]">
+    <div className="min-h-screen bg-[#171421]">
       <div className="max-w-6xl mx-auto px-4 py-8">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-[#A599E9]">Chart Sandbox</h1>
-          <p className="text-[#6E6E9E] mt-2">
+          <h1 className="text-3xl font-bold text-[#E8E2F4]">Chart Sandbox</h1>
+          <p className="text-[#6B6483] mt-2">
             20 graph style variations - hover to see details
           </p>
         </header>
 
         <div className="space-y-8">
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph01 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph02 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph03 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph04 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph05 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph06 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph07 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph08 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph09 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph10 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph11 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph12 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph13 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph14 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph15 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph16 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph17 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph18 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph19 />
           </div>
-          <div className="bg-[#2D2B55] rounded-xl border border-[#3B3B6E] p-6">
+          <div className="bg-[#1E1A2E] rounded-xl border border-[#3D3554] p-6">
             <Graph20 />
           </div>
         </div>

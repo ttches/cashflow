@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph08 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">08 - Ultra Minimal</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">No grid, no points, just clean lines</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">08 - Ultra Minimal</h3>
+      <p className="text-sm text-[#6B6483] mb-2">No grid, no points, just clean lines</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -22,17 +22,17 @@ const Graph08 = () => {
           enableGridX={false}
           enableGridY={false}
           theme={{
-            background: '#2D2B55',
-            text: { fill: '#A599E9' },
+            background: '#1E1A2E',
+            text: { fill: '#A9A1C1' },
             axis: {
-              ticks: { text: { fill: '#6E6E9E' } },
-              legend: { text: { fill: '#A599E9' } },
-              domain: { line: { stroke: '#3B3B6E' } },
+              ticks: { text: { fill: '#6B6483' } },
+              legend: { text: { fill: '#A9A1C1' } },
+              domain: { line: { stroke: '#3D3554' } },
             },
-            crosshair: { line: { stroke: '#A599E9', strokeOpacity: 0.5 } },
-            tooltip: { container: { background: '#1E1E3F', color: '#A599E9' } },
+            crosshair: { line: { stroke: '#A9A1C1', strokeOpacity: 0.5 } },
+            tooltip: { container: { background: '#171421', color: '#A9A1C1' } },
           }}
-          colors={['#A599E9', '#9EFFFF']}
+          colors={['#A9A1C1', '#89DDFF']}
           legends={[
             {
               anchor: 'bottom-right',
@@ -40,7 +40,7 @@ const Graph08 = () => {
               translateX: 100,
               itemWidth: 80,
               itemHeight: 20,
-              itemTextColor: '#6E6E9E',
+              itemTextColor: '#6B6483',
               symbolSize: 10,
               symbolShape: 'circle',
             },

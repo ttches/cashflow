@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph06 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">06 - Neon Glow</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">Bright colors on dark, thick lines</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">06 - Neon Glow</h3>
+      <p className="text-sm text-[#6B6483] mb-2">Bright colors on dark, thick lines</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -21,17 +21,17 @@ const Graph06 = () => {
           enableGridX={false}
           enableGridY={false}
           theme={{
-            background: '#1E1E3F',
-            text: { fill: '#A599E9' },
+            background: '#171421',
+            text: { fill: '#A9A1C1' },
             axis: {
-              ticks: { text: { fill: '#6E6E9E' } },
-              legend: { text: { fill: '#A599E9' } },
-              domain: { line: { stroke: '#3B3B6E' } },
+              ticks: { text: { fill: '#6B6483' } },
+              legend: { text: { fill: '#A9A1C1' } },
+              domain: { line: { stroke: '#3D3554' } },
             },
-            crosshair: { line: { stroke: '#9EFFFF', strokeWidth: 2 } },
-            tooltip: { container: { background: '#2D2B55', color: '#9EFFFF' } },
+            crosshair: { line: { stroke: '#89DDFF', strokeWidth: 2 } },
+            tooltip: { container: { background: '#1E1A2E', color: '#89DDFF' } },
           }}
-          colors={['#FF2C70', '#9EFFFF']}
+          colors={['#F07178', '#89DDFF']}
           legends={[
             {
               anchor: 'bottom-right',
@@ -39,7 +39,7 @@ const Graph06 = () => {
               translateX: 100,
               itemWidth: 80,
               itemHeight: 20,
-              itemTextColor: '#9EFFFF',
+              itemTextColor: '#89DDFF',
               symbolSize: 12,
               symbolShape: 'circle',
             },

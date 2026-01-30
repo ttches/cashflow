@@ -4,8 +4,8 @@ import { loanChartData, investmentValueData } from '../data'
 const Graph13 = () => {
   return (
     <div className="h-80">
-      <h3 className="text-lg font-semibold text-[#A599E9] mb-2">13 - Cool Cyan</h3>
-      <p className="text-sm text-[#6E6E9E] mb-2">Cyan and purple scheme, subtle area</p>
+      <h3 className="text-lg font-semibold text-[#E8E2F4] mb-2">13 - Cool Cyan</h3>
+      <p className="text-sm text-[#6B6483] mb-2">Cyan and purple scheme, subtle area</p>
       <div className="h-64">
         <ResponsiveLine
           data={[loanChartData, investmentValueData]}
@@ -22,17 +22,17 @@ const Graph13 = () => {
           enableSlices="x"
           enableGridX={false}
           theme={{
-            background: '#2D2B55',
-            text: { fill: '#9EFFFF' },
-            grid: { line: { stroke: '#3B3B6E' } },
+            background: '#1E1A2E',
+            text: { fill: '#89DDFF' },
+            grid: { line: { stroke: '#3D3554' } },
             axis: {
-              ticks: { text: { fill: '#9EFFFF' } },
-              legend: { text: { fill: '#9EFFFF' } },
+              ticks: { text: { fill: '#89DDFF' } },
+              legend: { text: { fill: '#89DDFF' } },
             },
-            crosshair: { line: { stroke: '#9EFFFF' } },
-            tooltip: { container: { background: '#1E1E3F', color: '#9EFFFF' } },
+            crosshair: { line: { stroke: '#89DDFF' } },
+            tooltip: { container: { background: '#171421', color: '#89DDFF' } },
           }}
-          colors={['#B362FF', '#9EFFFF']}
+          colors={['#C792EA', '#89DDFF']}
           legends={[
             {
               anchor: 'bottom-right',
@@ -40,7 +40,7 @@ const Graph13 = () => {
               translateX: 100,
               itemWidth: 80,
               itemHeight: 20,
-              itemTextColor: '#9EFFFF',
+              itemTextColor: '#89DDFF',
               symbolSize: 12,
               symbolShape: 'circle',
             },
