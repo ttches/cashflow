@@ -19,7 +19,7 @@ type UltraMinimalChartProps = {
 const UltraMinimalChart = ({
   title,
   data,
-  colors = ["#C792EA", "#89DDFF"],
+  colors = ["#d971d5", "#9fffff"],
 }: UltraMinimalChartProps) => {
   return (
     <div className="h-full">
@@ -45,7 +45,7 @@ const UltraMinimalChart = ({
             domain: { line: { stroke: "#3D3554" } },
             legend: { text: { fill: "#a196e4", fontSize: 18 } },
           },
-          crosshair: { line: { stroke: "#C792EA" } },
+          crosshair: { line: { stroke: "#d971d5" } },
           tooltip: {
             container: {
               background: "#15152a",

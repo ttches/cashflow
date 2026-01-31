@@ -37,7 +37,7 @@ const InputSection = ({
                 value={values[field.name] || ""}
                 onChange={(e) => onChange(field.name, e.target.value)}
                 placeholder={field.placeholder}
-                className="w-full px-3 py-2 bg-[#15152a] border border-[#3D3554] rounded-lg text-[#fad003] placeholder-[#6B6483] focus:ring-2 focus:ring-[#C792EA] focus:border-[#C792EA] outline-none transition-colors"
+                className="w-full px-3 py-2 bg-[#15152a] border border-[#3D3554] rounded-lg text-[#fad003] placeholder-[#6B6483] focus:ring-2 focus:ring-[#d971d5] focus:border-[#d971d5] outline-none transition-colors"
               />
               {(field.suffix || rightContent?.[field.name]) && (
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2 text-sm">
@@ -45,7 +45,7 @@ const InputSection = ({
                     <span className="text-[#a196e4]">{field.suffix}</span>
                   )}
                   {rightContent?.[field.name] && (
-                    <span className="text-[#C3E88D]">
+                    <span className="text-[#a6ff90]">
                       {rightContent[field.name]}
                     </span>
                   )}

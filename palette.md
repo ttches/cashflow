@@ -33,16 +33,17 @@ Based on the darker, more muted theme from the screenshot.
 |------|-----|-------|
 | Gold | `#fad003` | Slider accent, input text |
 | Gold Hover | `#dcb817` | Slider hover state |
-| Purple | `#C792EA` | Focus rings, highlights |
-| Pink | `#F07178` | Errors, chart line 1 |
-| Cyan | `#89DDFF` | Links, hover states |
-| Green | `#C3E88D` | Success states, chart line 2 |
-| Orange | `#F78C6C` | Warnings, chart line 3 |
+| Purple | `#d971d5` | Focus rings, highlights |
+| Red | `#ff638c` | Errors, chart line 1 |
+| Cyan | `#9fffff` | Links, hover states |
+| Green | `#a6ff90` | Success states, chart line 2 |
+| Orange | `#ff9d02` | Warnings, chart line 3 |
+| Blue | `#169fff` | Accent, chart line 4 |
 
 ## Status
 
 | Name | Hex | Usage |
 |------|-----|-------|
-| Error | `#F07178` | Error messages |
-| Success | `#C3E88D` | Success messages |
-| Warning | `#fad003` | Warning messages |
+| Error | `#ff638c` | Error messages |
+| Success | `#a6ff90` | Success messages |
+| Warning | `#ff9d02` | Warning messages |
