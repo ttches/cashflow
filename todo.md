@@ -4,4 +4,10 @@ The box should have commas and be formatted as currency with no cents
 
 THE HOVER BOX SHOULD APPEAR ON THE RIGHT COLUMN
 
-include increments for that specific month. How much +interest that year
+include increments for that specific month. How much +interest that year, +total that year
+
+delete graph title. Instead replace "amounts" on y axis with title
+
+--
+Key insights
+-total interest % paid
