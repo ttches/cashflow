@@ -21,7 +21,7 @@ type UltraMinimalChartProps = {
 const UltraMinimalChart = ({
   title,
   data,
-  colors = ["#d971d5", "#9fffff"],
+  colors = ["#d971d5", "#9fffff", "#ff9d02", "#a6ff90", "#169fff", "#fad003"],
   yMin = 0,
 }: UltraMinimalChartProps) => {
   return (

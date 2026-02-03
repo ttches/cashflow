@@ -3,6 +3,7 @@ type InvestmentDataPoint = {
   totalValue: number
   totalContributions: number
   appreciation: number
+  yearlyReturns: number
 }
 
 const calculateInvestmentSchedule = (
@@ -21,20 +22,26 @@ const calculateInvestmentSchedule = (
     totalValue: initialAmount,
     totalContributions: initialAmount,
     appreciation: 0,
+    yearlyReturns: 0,
   })
 
   for (let year = 1; year <= years; year++) {
+    const startingBalance = balance
+    let yearlyContributions = 0
     for (let month = 1; month <= 12; month++) {
       const totalMonthly = monthlyContribution + extraContribution
       balance = (balance + totalMonthly) * (1 + rate / 12)
       totalContributions += totalMonthly
+      yearlyContributions += totalMonthly
     }
+    const yearlyReturns = balance - startingBalance - yearlyContributions
 
     dataPoints.push({
       year,
       totalValue: Math.round(balance * 100) / 100,
       totalContributions: Math.round(totalContributions * 100) / 100,
       appreciation: Math.round((balance - totalContributions) * 100) / 100,
+      yearlyReturns: Math.round(yearlyReturns * 100) / 100,
     })
   }
 

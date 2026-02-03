@@ -18,7 +18,7 @@ export const useChartData = () => {
       loan.rate,
       loan.payment,
       years,
-      extraToLoan
+      extraToLoan,
     );
 
     const investmentData = calculateInvestmentSchedule(
@@ -26,7 +26,7 @@ export const useChartData = () => {
       investment.returnRate,
       investment.monthlyContribution,
       years,
-      extraToInvest
+      extraToInvest,
     );
 
     const loanBalanceData = [
@@ -38,7 +38,11 @@ export const useChartData = () => {
         id: "Interest Paid",
         data: loanData.map((d) => ({ x: d.year, y: d.totalInterestPaid })),
       },
-    ];
+      {
+        id: "Yearly Interest",
+        data: loanData.map((d) => ({ x: d.year, y: d.yearlyInterest })),
+      },
+    ].reverse();
 
     const investmentGrowthData = [
       {
@@ -52,10 +56,14 @@ export const useChartData = () => {
           y: d.totalContributions,
         })),
       },
-    ];
+      {
+        id: "Yearly Returns",
+        data: investmentData.map((d) => ({ x: d.year, y: d.yearlyReturns })),
+      },
+    ].reverse();
 
     const netWorthValues = loanData.map(
-      (d, i) => investmentData[i].totalValue - d.balance
+      (d, i) => investmentData[i].totalValue - d.balance,
     );
 
     const netWorthData = [
@@ -66,11 +74,24 @@ export const useChartData = () => {
           y: netWorthValues[i],
         })),
       },
-    ];
+      {
+        id: "Yearly Returns",
+        data: investmentData.map((d) => ({ x: d.year, y: d.yearlyReturns })),
+      },
+      {
+        id: "Yearly Interest",
+        data: loanData.map((d) => ({ x: d.year, y: d.yearlyInterest })),
+      },
+    ].reverse();
 
     const netWorthYMin = Math.min(0, netWorthValues[0]);
 
-    return { loanBalanceData, investmentGrowthData, netWorthData, netWorthYMin };
+    return {
+      loanBalanceData,
+      investmentGrowthData,
+      netWorthData,
+      netWorthYMin,
+    };
   }, [
     loan.amount,
     loan.rate,

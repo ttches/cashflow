@@ -2,6 +2,7 @@ type LoanDataPoint = {
   year: number;
   balance: number;
   totalInterestPaid: number;
+  yearlyInterest: number;
 };
 
 const calculateMonthlyInterest = (balance: number, rate: number): number => {
@@ -23,14 +24,17 @@ const calculateLoanSchedule = (
     year: 0,
     balance: principal,
     totalInterestPaid: 0,
+    yearlyInterest: 0,
   });
 
   for (let year = 1; year <= years; year++) {
+    let yearlyInterest = 0;
     for (let month = 1; month <= 12; month++) {
       if (balance <= 0) break;
 
       const interest = calculateMonthlyInterest(balance, rate);
       totalInterestPaid += interest;
+      yearlyInterest += interest;
       balance = balance + interest - monthlyPayment - extraPayment;
 
       if (balance < 0) {
@@ -42,6 +46,7 @@ const calculateLoanSchedule = (
       year,
       balance: Math.round(balance * 100) / 100,
       totalInterestPaid: Math.round(totalInterestPaid * 100) / 100,
+      yearlyInterest: Math.round(yearlyInterest * 100) / 100,
     });
   }
 
