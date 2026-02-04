@@ -14,6 +14,12 @@ const AdditionalPaymentsSection = () => {
     setRedirectAfterPayoff,
   } = useAdditionalFunds();
 
+  const handleAmountChange = (value: string) => {
+    const newValue = parseNumericInput(value);
+    if (Number(newValue) > 0) setEnabled(true);
+    setAmount(newValue);
+  };
+
   return (
     <div className="bg-[#191831] rounded-xl border border-[#3D3554] p-6 space-y-4">
       <div>
@@ -42,7 +48,7 @@ const AdditionalPaymentsSection = () => {
             type="text"
             id="additionalPayments"
             value={formatWithCommas(amount)}
-            onChange={(e) => setAmount(parseNumericInput(e.target.value))}
+            onChange={(e) => handleAmountChange(e.target.value)}
             placeholder={placeholder}
             autoComplete="off"
             className="w-full px-3 py-2 bg-[#15152a] border border-[#3D3554] rounded-lg text-[#fad003] placeholder-[#6B6483] focus:ring-2 focus:ring-[#d971d5] focus:border-[#d971d5] outline-none transition-colors"

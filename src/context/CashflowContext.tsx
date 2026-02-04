@@ -28,6 +28,7 @@ type CashflowState = {
   setUseMinPayment: React.Dispatch<React.SetStateAction<boolean>>;
   redirectAfterPayoff: boolean;
   setRedirectAfterPayoff: React.Dispatch<React.SetStateAction<boolean>>;
+  resetAll: () => void;
 };
 
 const CashflowContext = createContext<CashflowState | null>(null);
@@ -44,6 +45,25 @@ export const CashflowProvider = ({ children }: { children: ReactNode }) => {
   const [hoveredPoints, setHoveredPoints] = useState<HoveredPoint[] | null>(null);
   const [useMinPayment, setUseMinPayment] = useState(false);
   const [redirectAfterPayoff, setRedirectAfterPayoff] = useState(true);
+
+  const resetAll = () => {
+    setLoanValues({
+      loanAmount: "0",
+      loanInterest: "0",
+      loanPayment: "0",
+    });
+    setInvestmentValues({
+      initialAmount: "0",
+      returnRate: "0",
+      monthlyContribution: "0",
+    });
+    setAdditionalAmount("0");
+    setAdditionalEnabled(false);
+    setSplitPercent(50);
+    setTimeHorizon(10);
+    setUseMinPayment(false);
+    setRedirectAfterPayoff(true);
+  };
 
   return (
     <CashflowContext.Provider
@@ -66,6 +86,7 @@ export const CashflowProvider = ({ children }: { children: ReactNode }) => {
         setUseMinPayment,
         redirectAfterPayoff,
         setRedirectAfterPayoff,
+        resetAll,
       }}
     >
       {children}

@@ -1,6 +1,7 @@
 import UltraMinimalChart from "../components/UltraMinimalChart";
 import HoverPanel from "../components/HoverPanel";
 import KeyInsightsPanel from "../components/KeyInsightsPanel";
+import Logo from "../components/Logo";
 import LoanSection from "../components/LoanSection";
 import InvestmentSection from "../components/InvestmentSection";
 import AdditionalPaymentsSection from "../components/AdditionalPaymentsSection";
@@ -16,6 +17,7 @@ const Home = () => {
       <div className="h-full mx-auto px-4 py-8">
         <div className="h-full grid grid-cols-[1fr_3fr_1fr] gap-8">
           <div className="space-y-6 overflow-y-auto">
+            <Logo />
             <LoanSection />
             <InvestmentSection />
             <AdditionalPaymentsSection />
