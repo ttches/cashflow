@@ -1,6 +1,13 @@
 export const formatWithCommas = (value: string): string => {
-  const num = parseFloat(value);
-  return isNaN(num) ? "" : num.toLocaleString("en-US");
+  if (!value) return "";
+
+  const [integerPart, decimalPart] = value.split(".");
+  const num = parseInt(integerPart, 10);
+  if (isNaN(num)) return "";
+
+  const formattedInteger = num.toLocaleString("en-US");
+  if (decimalPart !== undefined) return `${formattedInteger}.${decimalPart}`;
+  return formattedInteger;
 };
 
 export const parseNumericInput = (value: string, allowDecimal = false): string => {

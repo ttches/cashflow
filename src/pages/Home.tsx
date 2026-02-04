@@ -1,5 +1,6 @@
 import UltraMinimalChart from "../components/UltraMinimalChart";
 import HoverPanel from "../components/HoverPanel";
+import KeyInsightsPanel from "../components/KeyInsightsPanel";
 import LoanSection from "../components/LoanSection";
 import InvestmentSection from "../components/InvestmentSection";
 import AdditionalPaymentsSection from "../components/AdditionalPaymentsSection";
@@ -55,8 +56,11 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="pt-6">
+          <div className="pt-6 flex flex-col gap-6 h-full">
             <HoverPanel />
+            <div className="mt-auto">
+              <KeyInsightsPanel />
+            </div>
           </div>
         </div>
       </div>
