@@ -14,8 +14,8 @@ const Home = () => {
 
   return (
     <div className="h-screen bg-[#15152a] overflow-hidden">
-      <div className="h-full mx-auto px-4 py-8">
-        <div className="h-full grid grid-cols-[1fr_3fr_1fr] gap-8">
+      <div className="h-full mx-auto px-2 py-4 min-[764px]:px-4 min-[764px]:py-8">
+        <div className="h-full grid grid-cols-2 min-[764px]:grid-cols-[1fr_3fr_1fr] gap-2 min-[764px]:gap-8">
           <div className="space-y-6 overflow-y-auto">
             <Logo />
             <LoanSection />
@@ -36,7 +36,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 h-full">
+          <div className="hidden min-[764px]:flex flex-col gap-4 h-full">
             <div className="flex-1 min-h-0">
               <UltraMinimalChart
                 title="Loan Balance"
@@ -58,11 +58,9 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="pt-6 flex flex-col gap-6 h-full">
-            <HoverPanel />
-            <div className="mt-auto">
-              <KeyInsightsPanel />
-            </div>
+          <div className="pt-6 flex flex-col gap-6 min-[764px]:h-full overflow-y-auto">
+            <HoverPanel className="hidden min-[764px]:block" />
+            <KeyInsightsPanel className="min-[764px]:mt-auto" />
           </div>
         </div>
       </div>

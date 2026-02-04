@@ -7,17 +7,17 @@ const formatValue = (value: number) => {
   return `$${value.toFixed(0)}`;
 };
 
-const HoverPanel = () => {
+const HoverPanel = ({ className = "" }: { className?: string }) => {
   const { hoveredPoints } = useCashflowContext();
 
   if (!hoveredPoints) {
-    return <div></div>;
+    return <div className={className}></div>;
   }
 
   const year = hoveredPoints[0]?.x;
 
   return (
-    <div className="space-y-4">
+    <div className={`space-y-4 ${className}`}>
       <div className="text-[#a196e4] text-lg font-medium">Year {year}</div>
       <div className="space-y-2">
         {hoveredPoints.map((point) => (

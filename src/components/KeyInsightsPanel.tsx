@@ -54,11 +54,11 @@ const Section = ({
   </div>
 );
 
-const KeyInsightsPanel = () => {
+const KeyInsightsPanel = ({ className = "" }: { className?: string }) => {
   const insights = useInsights();
 
   return (
-    <div className="space-y-3">
+    <div className={`space-y-3 ${className}`}>
       <div className="text-[#a196e4] text-lg font-medium">key insights</div>
 
       {insights.hasComparison && (
